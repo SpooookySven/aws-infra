@@ -1,0 +1,11 @@
+#cloud-config
+cloud_final_modules:
+- [users-groups,always]
+users:
+  - name: sven 
+    groups: [ wheel ]
+    sudo:     
+      - "ALL=(ALL) NOPASSWD:ALL"
+    shell: /bin/bash
+    ssh-authorized-keys:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCldRNQJlOm8fa/zYl/gZvpVL1NGFyPOVdwxIYvrbTIYSo6uRThN/wgqjPnOOwL00t0xPOLCziLi17O4jTRfPuka90TukqpfFjs2qGO29WLGppY/pxxVlgLKbIOHhefgTfITKk4RsZcBNQaYzy98BZSneIrrqxZpO8ku6/YrzZ4tj+e5az2YwGIgNQ2gCIwVeK1n5ypUn96zYKFZsuYeevqmgkNdU8f3Z8vIxzmSS9dlv2Z5ZBsycfGQ2cijDdOwfddtRII8h78VD/9L6btmNaD+4i33LKQWP58p2HIzRCEeZ/hNmBPskXRNPw6YAwjA9eFJb6hymy5D0kIenD0n5MTyP3FyzzKl/xgKmMwMymkA8mgfUKXUcutvL3ZuZ/ppk8pbpcxLGex0nmH9wzyG0cuNfO/vg8ZgvKqFW67fDGmilFTF1XTBZ4MknaQC5ytXT+fE8YN8nNY3xKsv7xujE731cBVK51EVz3sPrC196CpD/lrfmEkptsra2GRvLicwIk= arthur
