@@ -22,7 +22,7 @@ resource "aws_key_pair" "arthur" {
 resource "aws_instance" "magrathea" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
-  subnet_id     = "${data.terraform_remote_state.vpc-network.outputs.public_subnet_ids[0]}"
+  subnet_id     = "${data.terraform_remote_state.vpc-network.outputs.private_subnet_ids[0]}"
   key_name = aws_key_pair.arthur.key_name
 
   tags = {
