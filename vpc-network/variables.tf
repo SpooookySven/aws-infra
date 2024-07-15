@@ -19,4 +19,6 @@ variable "public_subnets" {
 variable "azs" {
   type = list(string)
 }
-
+variable "dns_servers" {
+  type = list(string)
+}

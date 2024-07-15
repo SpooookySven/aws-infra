@@ -1,15 +1,9 @@
-#output "ZoneID" {
-#  value = module.zones.route53_zone_zone_id
-#}
-#output "ZoneName" {
-#  value = module.zones.route53_zone_name
-#}
-#output "ZoneNameStatic" {
-#  value = module.zones.route53_static_zone_name
-#}
-#output "ZoneARN" {
-#  value = module.zones.route53_zone_zone_arn
-#}
+output "zone_id" {
+  value = aws_route53_zone.private.zone_id
+}
+output "zone_arn" {
+  value = aws_route53_zone.private.arn
+}
 output "pub_rt_id" {
   value = module.vpc.public_route_table_ids
 }

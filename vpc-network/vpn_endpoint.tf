@@ -2,7 +2,8 @@ resource "aws_ec2_client_vpn_endpoint" "milliways" {
   description            = "terraform-clientvpn"
   server_certificate_arn = data.aws_acm_certificate.server.arn
   client_cidr_block      = "10.2.0.0/22"
-
+  dns_servers = var.dns_servers
+  
   authentication_options {
     type                       = "certificate-authentication"
     root_certificate_chain_arn = data.aws_acm_certificate.server.arn 
