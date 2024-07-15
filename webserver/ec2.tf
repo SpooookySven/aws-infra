@@ -29,6 +29,7 @@ resource "aws_instance" "magrathea" {
   subnet_id     = "${data.terraform_remote_state.vpc-network.outputs.private_subnet_ids[0]}"
   key_name      = aws_key_pair.arthur.key_name
   user_data     = data.template_file.add_user.rendered
+  vpc_security_group_ids = [aws_security_group.magrathea_basic.id]
 
   tags = {
     Name = var.name
