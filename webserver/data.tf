@@ -7,3 +7,8 @@ data "terraform_remote_state" "vpc-network" {
   }
 }
 
+data "aws_acm_certificate" "sven-herrmann-lb" {
+  domain   = "sven-herrmann.com"
+  statuses = ["ISSUED"]
+}
+
